@@ -394,7 +394,7 @@ class BaseP2C(object):
 
                 if inspect.isclass(type_to_check) and issubclass(type_to_check, IntEnum):
                     self._import_set.add("from enum import IntEnum")
-                    enum_code: str = self._gen_enum_py_code(type_to_check, indent=indent - self.code_indent)
+                    enum_code: str = self._gen_enum_py_code(type_to_check, indent=0)
                     if enum_code:
                         self._content_deque.append(enum_code)
                 else:
