@@ -48,7 +48,7 @@ def replace_file_name_to_class_name(filename: str) -> str:
     # example_proto/common/single.proto -> Example_protoCommonSingle
     prefix: str = "".join([str(i).title() for i in Path(filename.split(".")[0]).joinpath().parts])
     # Example_protoCommonSingle -> ExampleProtoCommonSingle
-    prefix = prefix.replace("_", "")
+    prefix = prefix.replace("_", "").replace("-", "")
     return prefix
 
 
